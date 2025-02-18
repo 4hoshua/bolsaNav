@@ -20,6 +20,13 @@ public class PlanoDeTrabalho {
         this.bolsa = bolsa;
     }
 
+    @ManyToOne
+    private Projeto projeto;
+
+    public Projeto getProjeto() {return projeto;}
+
+    public void setProjeto(Projeto projeto) {this.projeto = projeto;}
+
     public Long getId() {return id;}
 
     public void setId(Long id) {this.id = id;}

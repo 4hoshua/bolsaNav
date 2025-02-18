@@ -2,6 +2,9 @@ package com.bolsaPackage.bolsaNav.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "projeto")
 public class Projeto {
@@ -21,6 +24,17 @@ public class Projeto {
         this.orientador = orientador;
         this.departamento = departamento;
     }
+
+    @OneToMany
+    @JoinTable(name = "projeto_plano_de_trabalho",
+            joinColumns = @JoinColumn(name = "projeto_id"),
+            inverseJoinColumns = @JoinColumn(name = "plano_de_trabalho_id")
+    )
+    private Set<PlanoDeTrabalho> planoDeTrabalhoSet = new HashSet<>();
+
+    public Set<PlanoDeTrabalho> getPlanoDeTrabalhoSet() {return planoDeTrabalhoSet;}
+
+    public void setPlanoDeTrabalhoSet(Set<PlanoDeTrabalho> planoDeTrabalhoSet) {this.planoDeTrabalhoSet = planoDeTrabalhoSet;}
 
     public Long getId() { return id;}
 
