@@ -1,3 +1,3 @@
-Foi usando o seguinte modelo relacional:
+Foi usado o seguinte modelo relacional:
 
 ![alt text](https://i.imgur.com/ApqoTVd.png)
